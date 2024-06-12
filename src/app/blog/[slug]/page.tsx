@@ -79,6 +79,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               renderBlock={({ record }) => {
                 switch (record.__typename) {
                   case "ImageBlockRecord":
+                    // @ts-ignore
                     return record.image ? <DatocmsImage data={record.image.responsiveImage} /> : null;
                   default:
                     return null;
